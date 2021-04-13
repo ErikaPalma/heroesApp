@@ -1,4 +1,55 @@
-<h1>HeroesApp</h1>
-<hr>
+<mat-sidenav-container fullscreen>
+    <!--Referencia local #sidenav-->
+    <mat-sidenav #sidenav mode="push">
+        <mat-toolbar>
+            <span >Menú</span>
+            <span class="spacer"></span>
 
-<router-outlet></router-outlet>
+            <button mat-mat-icon-button (click)="sidenav.toggle()">
+                <mat-icon >menu</mat-icon>
+            </button>
+        </mat-toolbar>
+        <mat-nav-list>
+            <!--Listado dentro del sidenav-->
+            <a routerLink="./listado" 
+            mat-list-item 
+            (click)="sidenav.toggle()">
+            <!--El atributo mat-list-icon crea un padding entre el texto y el icono -->
+            <mat-icon mat-list-icon>groups</mat-icon>
+            <span>Listado de héroes</span>
+            </a>
+
+            <a routerLink="./agregar" 
+            mat-list-item 
+            (click)="sidenav.toggle()">
+            <mat-icon  mat-list-icon>add_circle_outline</mat-icon>
+            <span>Añadir héroe</span>
+            </a>
+
+            <a routerLink="./buscar" 
+            mat-list-item 
+            (click)="sidenav.toggle()">
+            <mat-icon  mat-list-icon>search</mat-icon>
+            <span>Buscar héroe</span>
+            </a>
+
+        </mat-nav-list>
+    </mat-sidenav>
+    <!--Inicio menú con icono para menú hamburguesa-->
+    <mat-toolbar>
+        <!--al hacer clic busco la referencia local y utilizo el método toggle para mostrar el sidenav -->
+        <button mat-mat-icon-button (click)="sidenav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        
+        <!--para llevar el icono de logout al otro extremo-->
+        <span class="spacer"></span>
+        <button>
+           <mat-icon>logout</mat-icon>
+        </button>
+    </mat-toolbar>
+    <!--Fin menú-->
+    <div class="container">
+        <router-outlet></router-outlet>
+    </div>
+</mat-sidenav-container>
