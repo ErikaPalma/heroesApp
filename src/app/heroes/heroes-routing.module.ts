@@ -10,7 +10,7 @@ const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    /*Todas estas rutas se encuentran dentro del componente Home 
+    /*Todas estas rutas se encuentran dentro del componente Home
     por lo que en ese componente pondremos el router-outlet */
     children: [
       {
