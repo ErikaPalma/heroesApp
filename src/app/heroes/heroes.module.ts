@@ -10,6 +10,7 @@ import { HeroeDetailComponent } from './views/heroe-detail/heroe-detail.componen
 import { HomeComponent } from './views/home/home.component';
 import { HeroesListComponent } from './views/heroes-list/heroes-list.component';
 import { HeroeCardComponent } from './components/heroe-card/heroe-card.component';
+import { ImagenPipe } from './pipes/imagen.pipe';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { HeroeCardComponent } from './components/heroe-card/heroe-card.component
     HomeComponent,
     HeroesListComponent,
     HeroeCardComponent,
+    ImagenPipe,
   ],
   imports: [
     CommonModule,
