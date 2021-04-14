@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  // Esta sería la url en producción
+  baseUrl: 'https://erikapalma.com',
 };

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HeroesRoutingModule } from './heroes-routing.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from '../material/material.module';
+import { FormsModule } from '@angular/forms';
 
 import { AddHeroeComponent } from './views/add-heroe/add-heroe.component';
 import { BuscarComponent } from './views/buscar/buscar.component';
@@ -27,6 +28,7 @@ import { ImagenPipe } from './pipes/imagen.pipe';
     MaterialModule,
     HeroesRoutingModule,
     FlexLayoutModule,
+    FormsModule,
   ],
 })
 export class HeroesModule {}

@@ -1,1 +1,39 @@
-<p>buscar works!</p>
+<div fxLayout="column">
+    <div>
+        <h1>Encuentra tu héroe</h1>
+        <mat-divider></mat-divider>
+    </div>
+    <div fxLayout="column">
+        <mat-form-field>
+            <mat-label>Buscar</mat-label>
+            <input type="text"
+                   placeholder="Ej: Batman"
+                   aria-label="Number"
+                   matInput
+                  [(ngModel)]="termino"
+                   [matAutocomplete]="auto"
+                   (input)="buscando()"> <!--Cada vez que alguien escriba llamo a este método. No le paso argumento xq ya lo tengo en el termino-->
+            <mat-autocomplete autoActiveFirstOption 
+                              #auto="matAutocomplete"
+                              (optionSelected)="opcionSeleccionada($event)"> <!--lo que el usuario escribe en el buscador-->
+              <mat-option *ngFor="let heroe of heroes" [value]="heroe">
+                {{heroe.superhero}}
+              </mat-option>
+
+              <!--Si el término no se encuentra, muestro el mensaje de error. Añado que el length del termino
+                 sea mayor a 0 para que no salte el error con solo hacer focus-->
+              <mat-option [value]='' *ngIf="heroes.length === 0 && termino.trim().length > 0">
+               No se encontró {{termino}}
+              </mat-option>
+
+            </mat-autocomplete>
+          </mat-form-field>
+    </div>
+    <!--Mostrar el héroe seleccionado en el buscador-->
+    <div class="w-50" *ngIf="heroSeleccionado">
+      <app-heroe-card [heroe]="heroSeleccionado"></app-heroe-card>
+    </div>
+    
+</div>
+
+
