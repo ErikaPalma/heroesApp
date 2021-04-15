@@ -1,4 +1,8 @@
-<h1>Nuevo Héroe</h1>
+<h1>
+    {{(heroe.id )? 'Editar': 'Nuevo'}}
+     Héroe 
+    <small>{{heroe.superhero}}</small>
+</h1>
 <!--layoutGap para separar-->
 <div fxLayout="row" 
     fxLayoutGap="40px"
@@ -72,7 +76,9 @@
 
         <button mat-raised-button
                 color= "primary"
-                (click)="guardar()">Guardar
+                (click)="guardar()">
+                {{(heroe.id )? 'Actualizar': 'Crear'}}
+                
         </button>
 
             <span class="spacer"></span>
@@ -81,7 +87,7 @@
 
         <button *ngIf="heroe.id" mat-raised-button
                 color="warn"
-                (click)="borrar()">
+                (click)="borrarHeroe()">
                 <mat-icon>delete</mat-icon> Borrar
         </button>
     </div>

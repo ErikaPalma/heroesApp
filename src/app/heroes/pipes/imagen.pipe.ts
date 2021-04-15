@@ -4,6 +4,8 @@ import { Heroe } from '../model/heroe.model';
 
 @Pipe({
   name: 'imagen',
+  // Para que el pipe se ejecute cada vez que el ciclo de detección de cambios de Ag se dispare
+  // pure: false,
 })
 export class ImagenPipe implements PipeTransform {
   // recibe el heroe como arg, toma el id y le concatena el .jpg

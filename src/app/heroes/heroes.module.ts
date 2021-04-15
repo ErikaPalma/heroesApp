@@ -12,6 +12,7 @@ import { HomeComponent } from './views/home/home.component';
 import { HeroesListComponent } from './views/heroes-list/heroes-list.component';
 import { HeroeCardComponent } from './components/heroe-card/heroe-card.component';
 import { ImagenPipe } from './pipes/imagen.pipe';
+import { ConfirmarComponent } from './components/confirmar/confirmar.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ImagenPipe } from './pipes/imagen.pipe';
     HeroesListComponent,
     HeroeCardComponent,
     ImagenPipe,
+    ConfirmarComponent,
   ],
   imports: [
     CommonModule,
