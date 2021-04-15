@@ -66,9 +66,25 @@
                 required>
         </mat-form-field>
         <br>
+
+        <!--Botones guardar y borrar-->
+        <div fxLayout>
+
         <button mat-raised-button
                 color= "primary"
-                (click)="guardar()">Guardar</button>
+                (click)="guardar()">Guardar
+        </button>
+
+            <span class="spacer"></span>
+
+  <!--Muestra el botón de borrar solo si estoy editando-->
+
+        <button *ngIf="heroe.id" mat-raised-button
+                color="warn"
+                (click)="borrar()">
+                <mat-icon>delete</mat-icon> Borrar
+        </button>
+    </div>
 
     </div>
 

@@ -39,6 +39,11 @@ export class AddHeroeComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    /* como es mismo form para editar o crear, indico que si no incluye esa palabra no haya nada
+    si la inlcuye, ejecuta el código */
+    if (!this.router.url.includes('editar')) {
+      return;
+    }
     this.activatedRoute.params
       .pipe(switchMap(({ id }) => this.heroesService.getHeroeId(id)))
       .subscribe((heroe) => (this.heroe = heroe));
@@ -62,5 +67,12 @@ export class AddHeroeComponent implements OnInit {
         this.router.navigate(['/heroes', heroe.id]);
       });
     }
+  }
+
+  // Borrar héroe
+  borrar(): void {
+    this.heroesService.deleteHeroe(this.heroe.id).subscribe((resp) => {
+      this.router.navigate(['/heroes']);
+    });
   }
 }

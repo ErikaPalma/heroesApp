@@ -37,4 +37,10 @@ export class HeroesService {
   updateHeroe(heroe: Heroe): Observable<Heroe> {
     return this.http.put<Heroe>(`${this.baseUrl}/heroes/${heroe.id}`, heroe);
   }
+
+  // DELETE
+  // recibe un id y el observable no recibe nada, se puede dejar como objeto vacío pero mejor de tipo any
+  deleteHeroe(id: string): Observable<any> {
+    return this.http.delete<any>(`${this.baseUrl}/heroes/${id}`);
+  }
 }
