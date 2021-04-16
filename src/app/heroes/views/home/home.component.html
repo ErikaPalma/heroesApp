@@ -44,7 +44,10 @@
         
         <!--para llevar el icono de logout al otro extremo-->
         <span class="spacer"></span>
-        <button>
+        <!--Mostrar el nombre del usuario activo-->
+        <span>Hola, {{auth.usuario}}</span>
+
+        <button (click)="logout()">
            <mat-icon>logout</mat-icon>
         </button>
     </mat-toolbar>

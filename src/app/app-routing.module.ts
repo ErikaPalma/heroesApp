@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './auth/guards/auth.guard';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
 
 const routes: Routes = [
@@ -14,6 +15,8 @@ const routes: Routes = [
     path: 'heroes',
     loadChildren: () =>
       import('./heroes/heroes.module').then((m) => m.HeroesModule),
+    canLoad: [AuthGuard],
+    canActivate: [AuthGuard],
   },
   /*  Este componente lo puedo mostrar aquí porque está definido de forma
   global en el app.module, el resto de componentes no (harán lazy load)*/
